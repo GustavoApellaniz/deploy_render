@@ -11,7 +11,8 @@ con = mysql.connector.connect(
     host = os.getenv('host'), 
     database = os.getenv('database'), 
     user = os.getenv('user'),                                                          
-    password = os.getenv('password'))
+    password = os.getenv('password'),
+    ssl_disabled=False)
 
 @app.route('/post_student', methods = ['POST'])
 def post_student():
