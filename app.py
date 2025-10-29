@@ -1,6 +1,6 @@
 import mysql.connector
 from flask import Flask, jsonify, request
-from dotenv import load_dotenv, dotenv_values
+from dotenv import load_dotenv
 import os
 
 load_dotenv()
@@ -11,7 +11,10 @@ con = mysql.connector.connect(
     host = os.getenv('host'), 
     database = os.getenv('database'), 
     user = os.getenv('user'),                                                          
-    password = os.getenv('password'))
+    password = os.getenv('password'),
+    port = os.getenv('port'),
+    ssl_ca= r"C:\pendrive\PYTHON_PROJVS\flask\ca.pem"
+)
 
 @app.route('/post_student', methods = ['POST'])
 def post_student():
@@ -85,5 +88,5 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug = True, port = 8090)
+    app.run(debug=True, port = 8900)
 
