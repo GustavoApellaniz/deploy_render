@@ -12,7 +12,7 @@ con = mysql.connector.connect(
     database = os.getenv('database'), 
     user = os.getenv('user'),                                                          
     password = os.getenv('password'),
-    port = os.getenv('port'),
+    port = 10165,
     ssl_ca= r"C:\pendrive\PYTHON_PROJVS\flask\ca.pem"
 )
 
@@ -89,4 +89,3 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True, port = 8900)
-
